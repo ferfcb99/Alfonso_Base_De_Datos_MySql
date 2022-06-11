@@ -1,0 +1,117 @@
+CREATE DATABASE escuela;
+
+USE escuela;
+
+CREATE TABLE Profesor (	
+	id_profesor int NOT NULL UNIQUE, -- único 
+    nombre varchar (30) NOT NULL,
+    apellido varchar (30) NOT NULL,
+    edad int (2), -- 99
+    especialidad varchar (50),
+    PRIMARY KEY(id_profesor)  -- para que el campo sea único y que sea nuestra llave
+
+);
+
+-- COMO INSERTAR DATOS DE LA TABLA 
+INSERT INTO profesor(id_profesor, nombre, apellido, edad, especialidad)
+VALUES(1, 'Pedro', 'Sanchez', 50, 'Historiador');
+
+INSERT INTO profesor(id_profesor, nombre, apellido, edad, especialidad)
+VALUES(2, 'Martin', 'Lopez', 24, 'Deportes');
+
+INSERT INTO profesor(id_profesor, nombre, apellido, edad, especialidad)
+VALUES(3, 'Carlos', 'Lopez', 29, 'Informatica');
+
+-- COMO SELECCIONAR DATOS
+SELECT * FROM Profesor;
+
+-- COMO SELECCIONAR DATOS PUNTUALES
+SELECT nombre, especialidad FROM Profesor;
+
+-- Clausula WHERE es un filtro para calcular registros donde tengan solo ciertos datos
+SELECT * FROM Profesor WHERE edad = 29;
+SELECT nombre FROM Profesor WHERE apellido = 'Lopez';
+
+-- FILTRO con apelliodo Lopez y es deportista Operador and (Y)
+SELECT * FROM Profesor WHERE apellido = 'Lopez' AND especialidad = 'Deportes';
+
+-- Operador or (O)
+SELECT * FROM Profesor WHERE apellido = 'Lopez' OR especialidad = 'Informatica';
+
+-- Sentencia Between para manipular fechas, enteros y longitudes de cadena -- =, 
+SELECT * FROM Profesor WHERE edad BETWEEN 30 AND 50
+
+-- Ejercicio consulta todos los registros donde el ID del prof esté en 1 y 2
+SELECT * FROM Profesor WHERE id_profesor BETWEEN 1 AND 2;
+
+-- CONSULTA TODOS LOS NOMBRES DE LOS PROFESORES DONDE LA EDAD NO SOBREPASE LOS 30 (Y LOS APELLIDOS SEAN LOPEZ
+SELECT * FROM Profesor WHERE edad <= 30 OR APELLIDO = 'Lopez';
+
+insert into profesor (id_profesor, nombre, apellido, edad, especialidad) values (4, 'Tampflex', 'Calverd', 4, 'collaboration');
+insert into profesor (id_profesor, nombre, apellido, edad, especialidad) values (5, 'Cardify', 'Shorten', 5, 'asymmetric');
+insert into profesor (id_profesor, nombre, apellido, edad, especialidad) values (6, 'Voyatouch', 'Leythley', 6, 'Front-line');
+insert into profesor (id_profesor, nombre, apellido, edad, especialidad) values (7, 'Cookley', 'Magee', 7, 'Advanced');
+insert into profesor (id_profesor, nombre, apellido, edad, especialidad) values (8, 'Zathin', 'Joreau', 8, 'Public-key');
+insert into profesor (id_profesor, nombre, apellido, edad, especialidad) values (9, 'Flexidy', 'Dyter', 9, 'Decentralized');
+insert into profesor (id_profesor, nombre, apellido, edad, especialidad) values (10, 'Ronstring', 'Lody', 10, 'Open-architected');
+insert into profesor (id_profesor, nombre, apellido, edad, especialidad) values (11, 'Cardguard', 'Baistow', 11, 'didactic');
+insert into profesor (id_profesor, nombre, apellido, edad, especialidad) values (12, 'Y-Solowarm', 'Bance', 12, 'national');
+insert into profesor (id_profesor, nombre, apellido, edad, especialidad) values (13, 'Solarbreeze', 'Spur', 13, 'Realigned');
+insert into profesor (id_profesor, nombre, apellido, edad, especialidad) values (14, 'Aerified', 'Buchanan', 14, 'Persevering');
+insert into profesor (id_profesor, nombre, apellido, edad, especialidad) values (15, 'Trippledex', 'Trussler', 15, 'attitude-oriented');
+insert into profesor (id_profesor, nombre, apellido, edad, especialidad) values (16, 'Cardguard', 'Eydel', 16, 'time-frame');
+insert into profesor (id_profesor, nombre, apellido, edad, especialidad) values (17, 'Stim', 'Tithecott', 17, 'methodology');
+insert into profesor (id_profesor, nombre, apellido, edad, especialidad) values (18, 'Voyatouch', 'Haswall', 18, 'Programmable');
+insert into profesor (id_profesor, nombre, apellido, edad, especialidad) values (19, 'Stronghold', 'Clutten', 19, 'Face to face');
+insert into profesor (id_profesor, nombre, apellido, edad, especialidad) values (20, 'Alpha', 'Goodwyn', 20, 'Fundamental');
+insert into profesor (id_profesor, nombre, apellido, edad, especialidad) values (21, 'Fix San', 'Haster', 21, 'capacity');
+insert into profesor (id_profesor, nombre, apellido, edad, especialidad) values (22, 'Sonsing', 'Filipyev', 22, 'Synergized');
+insert into profesor (id_profesor, nombre, apellido, edad, especialidad) values (23, 'Duobam', 'Crackett', 23, 'Reverse-engineered');
+insert into profesor (id_profesor, nombre, apellido, edad, especialidad) values (24, 'Quo Lux', 'Kalkofen', 24, 'Open-source');
+insert into profesor (id_profesor, nombre, apellido, edad, especialidad) values (25, 'Greenlam', 'Kepp', 25, 'Ameliorated');
+insert into profesor (id_profesor, nombre, apellido, edad, especialidad) values (26, 'Namfix', 'Chrystie', 26, 'clear-thinking');
+insert into profesor (id_profesor, nombre, apellido, edad, especialidad) values (27, 'Lotstring', 'Gavrielly', 27, 'Optimized');
+insert into profesor (id_profesor, nombre, apellido, edad, especialidad) values (28, 'Otcom', 'Lines', 28, 'Proactive');
+insert into profesor (id_profesor, nombre, apellido, edad, especialidad) values (29, 'Bytecard', 'Chesshyre', 29, 'motivating');
+insert into profesor (id_profesor, nombre, apellido, edad, especialidad) values (30, 'Zaam-Dox', 'Durno', 30, 'explicit');
+insert into profesor (id_profesor, nombre, apellido, edad, especialidad) values (31, 'Ventosanzap', 'Jerrim', 31, 'solution');
+insert into profesor (id_profesor, nombre, apellido, edad, especialidad) values (32, 'Fintone', 'MacTrustey', 32, 'composite');
+insert into profesor (id_profesor, nombre, apellido, edad, especialidad) values (33, 'Tresom', 'Cheeney', 33, '4th generation');
+insert into profesor (id_profesor, nombre, apellido, edad, especialidad) values (34, 'Tres-Zap', 'Bison', 34, 'human-resource');
+insert into profesor (id_profesor, nombre, apellido, edad, especialidad) values (35, 'Fix San', 'Binnall', 35, 'Reverse-engineered');
+insert into profesor (id_profesor, nombre, apellido, edad, especialidad) values (36, 'Opela', 'Mensler', 36, 'Ergonomic');
+insert into profesor (id_profesor, nombre, apellido, edad, especialidad) values (37, 'Andalax', 'Heams', 37, 'Implemented');
+insert into profesor (id_profesor, nombre, apellido, edad, especialidad) values (38, 'Redhold', 'Eleshenar', 38, 'Reduced');
+insert into profesor (id_profesor, nombre, apellido, edad, especialidad) values (39, 'Aerified', 'Darwent', 39, 'implementation');
+insert into profesor (id_profesor, nombre, apellido, edad, especialidad) values (40, 'Flexidy', 'Schohier', 40, 'Organized');
+insert into profesor (id_profesor, nombre, apellido, edad, especialidad) values (41, 'Bamity', 'Lewknor', 41, 'intranet');
+insert into profesor (id_profesor, nombre, apellido, edad, especialidad) values (42, 'Tampflex', 'Grayer', 42, '5th generation');
+insert into profesor (id_profesor, nombre, apellido, edad, especialidad) values (43, 'Span', 'Warrick', 43, 'service-desk');
+insert into profesor (id_profesor, nombre, apellido, edad, especialidad) values (44, 'Gembucket', 'Turfes', 44, 'success');
+insert into profesor (id_profesor, nombre, apellido, edad, especialidad) values (45, 'Voltsillam', 'Briddle', 45, 'Open-architected');
+insert into profesor (id_profesor, nombre, apellido, edad, especialidad) values (46, 'Tampflex', 'Pistol', 46, 'capacity');
+insert into profesor (id_profesor, nombre, apellido, edad, especialidad) values (47, 'Tampflex', 'Proud', 47, 'Object-based');
+insert into profesor (id_profesor, nombre, apellido, edad, especialidad) values (48, 'Regrant', 'Rediers', 48, 'object-oriented');
+insert into profesor (id_profesor, nombre, apellido, edad, especialidad) values (49, 'Andalax', 'McDuff', 49, 'success');
+insert into profesor (id_profesor, nombre, apellido, edad, especialidad) values (50, 'Subin', 'Bunhill', 50, 'motivating');
+
+-- Consulta todos los registros con edad entre 20 y 30
+
+SELECT * FROM Profesor WHERE edad BETWEEN 20 AND 30;  -- [5,6,7,8,9,10]
+
+-- Consulta todos los registros con edad entre 20 y 30 o que tenga nombre Juan
+
+SELECT * FROM Profesor WHERE edad BETWEEN 20 AND 30 OR nombre = 'Juan';
+
+-- Clausula LIKE -> Como
+-- consulta todos los registros que tiene en su especialidad la secuencia de caracteres O
+
+SELECT * FROM Profesor WHERE especialidad LIKE '%or%';
+
+-- consultar todos los registros cuyos nombres de profesores inician con T
+SELECT * FROM Profesor WHERE nombre LIKE 'T%';
+
+-- consultar todos los registros cuyos apellidos de profesores terminen en R
+SELECT * FROM Profesor WHERE apellido LIKE '%r';
+
+SELECT * FROM Profesor WHERE apellido LIKE 'r';
