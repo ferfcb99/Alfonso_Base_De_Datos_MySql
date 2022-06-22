@@ -51,6 +51,66 @@ describe habitacion;
 
 
 
+CREATE TABLE Serie(
+	tipo_codigo varchar(100) primary key
+);
+
+INSERT INTO Serie(tipo_codigo) VALUES('123456789');
+INSERT INTO Serie(tipo_codigo) VALUES('qwertyuik');
+
+CREATE TABLE Auto(
+	tipo_codigo varchar(100) primary key,
+    color varchar(20) not null,
+    modelo varchar(20) not null,
+    marca varchar(20) not null,
+    foreign key(tipo_codigo) references Serie(tipo_codigo)
+);
+
+INSERT INTO Auto(tipo_codigo, color, modelo, marca) values("123456789", "Azul", "BBA", "Ford");
+
+
+CREATE TABLE Producto(
+	codigo_barras varchar(20) primary key,
+    marca varchar(50) not null,
+    tipo varchar(50) not null,
+    nombre varchar(50) not null
+);
+
+CREATE TABLE Pedido(
+	no_pedido int auto_increment primary key,
+    costo decimal(3,2) not null,
+    fecha date not null,
+    nombre_cliente varchar(50)
+);
+INSERT INTO Pedido(costo, fecha, nombre_cliente) values(9.99, "2022-06-21", "Saul"),
+													   (4.99, "2022-06-20", "Bere"),
+													   (1.49, "2022-05-21", "Saul");
+SELECT * FROM Pedido;
+                                                       
+INSERT INTO Pedido(costo, fecha, nombre_cliente) values(5, CURDATE(), "Lizeth"); -- CURRENT DATE 
+
+-- crud
+
+
+CREATE TABLE Producto_Pedido(
+	codigo_barras varchar(20),
+    no_pedido int,
+    FOREIGN KEY(codigo_barras) references Producto(codigo_barras),
+    foreign key(no_pedido) references Pedido(no_pedido)
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
