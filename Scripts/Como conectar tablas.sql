@@ -42,6 +42,18 @@ insert into Habitacion(cantidad_camas, tipo, costo, no_reservacion) values(1, 'C
 insert into Habitacion(cantidad_camas, tipo, costo, no_reservacion) values(1, 'Chica', 49.99, 5);
 insert into Habitacion(cantidad_camas, tipo, costo, no_reservacion) values(3, 'Grande', 99.999, 4);
 
+select * from habitacion;
+select cantidad_camas from habitacion;
+
+-- con alias
+select h.cantidad_camas from habitacion h;
+
+-- join para cambiar el no_reservacion por el nombre de quien la hizo
+select h.no_habitacion, h.cantidad_camas, h.tipo, h.costo, hp.nombre 
+	from habitacion h INNER JOIN huesped hp ON h.no_reservacion = hp.no_reservacion;
+    
+    
+
 
 select * from Habitacion;
 
